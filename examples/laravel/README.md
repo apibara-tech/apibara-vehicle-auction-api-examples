@@ -1,0 +1,10 @@
+# Laravel Example
+
+Add your API key to `.env`:
+
+```env
+APIBARA_API_KEY=your_api_key_here
+APIBARA_BASE_URL=https://apibara.tech/api/v1/vehicle-auction
+```
+
+Register `ApibaraVehicleAuctionClient` as a service or use it directly in controllers/jobs.

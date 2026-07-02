@@ -1,0 +1,33 @@
+# Apibara Copart & IAAI Vehicle Auction API Examples
+
+Official code examples for the Apibara Copart & IAAI Vehicle Auction API.
+
+Product page: https://apibara.tech/en/products/vehicle-auction-data-api
+Endpoints: https://apibara.tech/en/products/vehicle-auction-data-api/endpoints
+Documentation: https://apibara.tech/en/products/vehicle-auction-data-api/docs
+OpenAPI: https://apibara.tech/openapi/vehicle-auction-data-api.json
+
+Base URL: https://apibara.tech/api/v1/vehicle-auction
+Authentication: X-API-Key HTTP header.
+
+Main endpoints:
+- GET /vehicles
+- GET /vehicles/{slugVin}
+- GET /vehicles/{slugVin}/history
+- GET /vehicles/{slugVin}/related
+- GET /vehicles/filters
+- GET /vehicles/{slugVin}/shipping
+- GET /locations
+- GET /shipping/auction-to-port
+- GET /vehicles/urltodetails
+
+Use cases:
+- Copart and IAAI search websites
+- Vehicle auction marketplaces
+- VIN auction history tools
+- Dealer inventory enrichment
+- Automotive CRM systems
+- Shipping price calculators
+- Salvage car analytics dashboards
+- WordPress vehicle auction listing websites
+- AI vehicle data agents

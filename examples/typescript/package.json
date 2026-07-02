@@ -1,0 +1,16 @@
+{
+  "name": "apibara-vehicle-auction-api-typescript-examples",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "search": "tsx search-vehicles.ts",
+    "details": "tsx get-vehicle-details.ts"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}

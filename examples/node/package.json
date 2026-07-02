@@ -1,0 +1,14 @@
+{
+  "name": "apibara-vehicle-auction-api-node-examples",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "search": "node search-vehicles.js",
+    "details": "node get-vehicle-details.js",
+    "shipping": "node get-shipping.js",
+    "url": "node get-details-from-url.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7"
+  }
+}
