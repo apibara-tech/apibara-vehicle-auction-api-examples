@@ -1,0 +1,35 @@
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareSourceCode",
+  "name": "Apibara Vehicle Auction API Examples",
+  "description": "Official code examples and AI-ready integration guides for the Apibara Vehicle Auction Data API for Copart and IAAI data.",
+  "codeRepository": "https://github.com/apibara-tech/apibara-vehicle-auction-api-examples",
+  "programmingLanguage": [
+    "Bash",
+    "JavaScript",
+    "TypeScript",
+    "Python",
+    "PHP",
+    "Swift",
+    "Java",
+    "Kotlin",
+    "C#",
+    "Go",
+    "Ruby"
+  ],
+  "runtimePlatform": "Web API",
+  "license": "https://opensource.org/license/mit/",
+  "isPartOf": {
+    "@type": "WebAPI",
+    "name": "Apibara Vehicle Auction Data API",
+    "url": "https://apibara.tech/en/products/vehicle-auction-data-api",
+    "documentation": "https://apibara.tech/en/products/vehicle-auction-data-api/docs",
+    "termsOfService": "https://apibara.tech/en/terms",
+    "provider": {
+      "@type": "Organization",
+      "name": "Apibara.tech",
+      "url": "https://apibara.tech"
+    }
+  },
+  "keywords": "Copart API, IAAI API, Vehicle Auction API, VIN Auction History API, Car Auction API, Salvage Auction API, Auction Lot Details API, Automotive Data API"
+}

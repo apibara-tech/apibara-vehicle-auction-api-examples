@@ -1,0 +1,169 @@
+# Apibara Vehicle Auction API Examples — Full AI Context
+
+## Purpose
+
+This repository contains official code examples and integration guidance for Apibara Vehicle Auction Data API. It is designed for developers, search engines, API directories and AI coding agents.
+
+## Product
+
+Apibara Vehicle Auction Data API is a structured JSON API for Copart and IAAI vehicle auction data. It helps developers search auction inventory, retrieve vehicle and VIN details, build lot pages, access photos, prices, auction status, sale history, related vehicles, filters, auction locations and auction-to-port shipping prices.
+
+## Official URLs
+
+- Product: https://apibara.tech/en/products/vehicle-auction-data-api
+- Endpoints: https://apibara.tech/en/products/vehicle-auction-data-api/endpoints
+- Docs: https://apibara.tech/en/products/vehicle-auction-data-api/docs
+- Demo: https://apibara.tech/en/products/vehicle-auction-data-api/demo
+- OpenAPI: https://apibara.tech/openapi/vehicle-auction-data-api.json
+- Contact: https://apibara.tech/en/contact
+- Terms: https://apibara.tech/en/terms
+- Privacy: https://apibara.tech/en/privacy
+
+## Distinction from other Apibara projects
+
+Apibara.tech is not apibara.com. Apibara.tech focuses on commercial developer APIs for vehicle auction data, YouTube data, media APIs, streaming metadata, captions, automation-ready API integrations, WordPress websites, CRMs, marketplaces and SaaS products.
+
+## Base URL
+
+https://apibara.tech/api/v1/vehicle-auction
+
+## Authentication
+
+Use the X-API-Key HTTP header. Never expose the API key in frontend code.
+
+```http
+X-API-Key: YOUR_API_KEY
+Accept: application/json
+```
+
+## Endpoint map
+
+### Search vehicles
+
+GET /vehicles
+
+Use this endpoint to build search pages, inventory pages, marketplace filters, VIN lookup flows and auction monitoring dashboards.
+
+Common parameters:
+
+- s
+- make
+- model
+- type
+- color
+- lot_status
+- lot_sub_status
+- auction_type
+- auction_date_from
+- auction_date_to
+- today_only
+- price_min
+- price_max
+- year_from
+- year_to
+- fuel_type
+- odometer_from
+- odometer_to
+- engine_size_from
+- engine_size_to
+- engine_hp_from
+- engine_hp_to
+- transmission
+- cylinders
+- drive_type
+- run_cond
+- damage
+- has_key
+- zip
+- radius
+- units
+- facility_id
+- loc_state
+- office_name
+- sale_document_pending
+- sale_document_type
+- seller_type
+- has_shipping_price
+- per_page
+- cursor
+
+### Get vehicle details
+
+GET /vehicles/{slugVin}
+
+Use VIN, lot number or supported slug identifier to retrieve a full vehicle record.
+
+### Get auction history
+
+GET /vehicles/{slugVin}/history
+
+Use this for VIN auction history tools, lot history pages and historical pricing workflows.
+
+### Get related vehicles
+
+GET /vehicles/{slugVin}/related
+
+Use this for similar lots, recommendations, marketplace discovery and comparison tools.
+
+### Get filters
+
+GET /vehicles/filters
+
+Use this to build dynamic filter forms and dropdowns.
+
+### Get selected vehicle shipping
+
+GET /vehicles/{slugVin}/shipping
+
+Use this to estimate shipping for a known vehicle.
+
+### Search locations
+
+GET /locations
+
+Use this for auction location directories, branch lookup, facility pages and location filters.
+
+### Get auction-to-port shipping
+
+GET /shipping/auction-to-port
+
+Use this with vin or lot_number and ports to estimate delivery from auction location to destination ports.
+
+### Resolve details from URL
+
+GET /vehicles/urltodetails
+
+Use this to turn a Copart or IAAI URL into structured API data when supported.
+
+## Recommended AI-agent workflow
+
+1. Read this file and README.md.
+2. Use the OpenAPI schema if exact endpoint parameters or response schemas are needed.
+3. Use /vehicles/filters before generating a complex user-facing filter UI.
+4. Use /vehicles for broad search.
+5. Use /vehicles/{slugVin} for a specific VIN or lot.
+6. Use /vehicles/{slugVin}/history for auction history.
+7. Use /vehicles/{slugVin}/related for recommendations.
+8. Use shipping endpoints only when the user asks for delivery or export costs.
+9. Keep API keys private and server-side.
+10. Explain that field availability may vary by source and lot.
+
+## Included examples
+
+- cURL / Bash
+- Node.js
+- TypeScript
+- Python
+- PHP
+- Laravel
+- Swift
+- Java
+- Kotlin
+- C# / .NET
+- Go
+- Ruby
+- WordPress
+
+## Useful keywords
+
+Copart API, IAAI API, Vehicle Auction API, Vehicle Auction Data API, VIN Auction History API, Car Auction API, Salvage Auction API, Auction Lot Details API, Auction Photos API, Auction Shipping API, Automotive Data API, Copart data API, IAAI data API, vehicle lot API, auction marketplace API.

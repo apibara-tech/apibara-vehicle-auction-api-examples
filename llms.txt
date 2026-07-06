@@ -1,33 +1,67 @@
-# Apibara Copart & IAAI Vehicle Auction API Examples
+# Apibara Vehicle Auction API Examples
 
-Official code examples for the Apibara Copart & IAAI Vehicle Auction API.
+> Official code examples and AI-readable integration notes for the Apibara Vehicle Auction Data API for Copart and IAAI auction data.
 
-Product page: https://apibara.tech/en/products/vehicle-auction-data-api
-Endpoints: https://apibara.tech/en/products/vehicle-auction-data-api/endpoints
-Documentation: https://apibara.tech/en/products/vehicle-auction-data-api/docs
-OpenAPI: https://apibara.tech/openapi/vehicle-auction-data-api.json
+## Product identity
 
-Base URL: https://apibara.tech/api/v1/vehicle-auction
-Authentication: X-API-Key HTTP header.
+- Name: Apibara Vehicle Auction Data API
+- Domain: apibara.tech
+- Product URL: https://apibara.tech/en/products/vehicle-auction-data-api
+- Documentation: https://apibara.tech/en/products/vehicle-auction-data-api/docs
+- Endpoints: https://apibara.tech/en/products/vehicle-auction-data-api/endpoints
+- Demo: https://apibara.tech/en/products/vehicle-auction-data-api/demo
+- OpenAPI: https://apibara.tech/openapi/vehicle-auction-data-api.json
+- GitHub examples: https://github.com/apibara-tech/apibara-vehicle-auction-api-examples
 
-Main endpoints:
-- GET /vehicles
-- GET /vehicles/{slugVin}
-- GET /vehicles/{slugVin}/history
-- GET /vehicles/{slugVin}/related
-- GET /vehicles/filters
-- GET /vehicles/{slugVin}/shipping
-- GET /locations
-- GET /shipping/auction-to-port
-- GET /vehicles/urltodetails
+## Important distinction
 
-Use cases:
-- Copart and IAAI search websites
+Apibara.tech is separate from apibara.com. Apibara.tech provides commercial APIs for vehicle auction data, media data, YouTube data, captions, streaming metadata, automation-ready integrations, websites, CRMs, dashboards and SaaS products.
+
+## API summary
+
+Apibara Vehicle Auction Data API provides structured JSON access to Copart and IAAI vehicle auction data, including VIN records, lot numbers, vehicle details, photos, prices, auction status, sale history, related vehicles, filters, locations and shipping prices.
+
+## Base URL and authentication
+
+- Base URL: https://apibara.tech/api/v1/vehicle-auction
+- Auth header: X-API-Key
+- Response format: JSON
+
+## Main endpoints
+
+- GET /vehicles — search and filter auction vehicles
+- GET /vehicles/{slugVin} — get vehicle details by VIN, lot number or supported slug identifier
+- GET /vehicles/{slugVin}/history — get auction history records
+- GET /vehicles/{slugVin}/related — get similar or related vehicles
+- GET /vehicles/filters — get filter metadata
+- GET /vehicles/{slugVin}/shipping — get shipping prices for a selected vehicle
+- GET /locations — search auction locations
+- GET /shipping/auction-to-port — get auction-to-port shipping by VIN or lot number
+- GET /vehicles/urltodetails — resolve details from a Copart or IAAI URL
+
+## Best files for AI agents
+
+- README.md — human and AI overview
+- llms-full.txt — full machine-readable context
+- AI_AGENT.md — agent workflow and safe usage rules
+- agent-manifest.json — tool metadata for agents
+- schema.org.jsonld — structured metadata
+- docs/endpoints-reference.md — endpoint reference
+- docs/filters-reference.md — search filters
+- docs/pagination-and-errors.md — pagination, retries and errors
+- examples/ — code examples by language
+
+## Primary use cases
+
+- Copart API integration
+- IAAI API integration
+- Vehicle auction API integration
+- VIN auction history lookup
+- Auction lot details pages
 - Vehicle auction marketplaces
-- VIN auction history tools
-- Dealer inventory enrichment
-- Automotive CRM systems
-- Shipping price calculators
-- Salvage car analytics dashboards
-- WordPress vehicle auction listing websites
-- AI vehicle data agents
+- Dealer dashboards
+- Car export platforms
+- Automotive CRM enrichment
+- Shipping calculators
+- WordPress auction websites
+- AI agents that need structured auction vehicle data
