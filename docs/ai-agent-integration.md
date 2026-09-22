@@ -1,31 +1,21 @@
 # AI Agent Integration Guide
 
-The Apibara Copart & IAAI Vehicle Auction API is suitable for AI agents that need structured vehicle auction data.
+Use these canonical resources first:
 
-## Machine-readable API definition
+- OpenAPI 3.1: https://apibara.tech/openapi/v1.json
+- AI facts: https://apibara.tech/ai-facts.json
+- RFC 9727 API catalog: https://apibara.tech/.well-known/api-catalog
+- MCP: https://apibara.tech/mcp
+- Agent rules: https://apibara.tech/ai/rules/vehicle-auction-agent-rules.md
 
-```text
-https://apibara.tech/openapi/vehicle-auction-data-api.json
-```
+## Workflow
 
-## Recommended agent workflow
+1. Read OpenAPI for exact parameters and schemas.
+2. Use `GET /vehicles` for search.
+3. Use `platform=copart|iaai` for readable source filtering.
+4. Use `upcoming=all|only|without` only as documented.
+5. Use `updated_within_minutes=1..525600` plus cursor pagination for incremental sync.
+6. Use `GET /vehicles/{slugVin}/history` for retained auction history.
+7. Keep `X-API-Key` server-side.
 
-1. Use `/vehicles` to search inventory by make, model, VIN, lot number, title, auction status, location, price range, year range, damage, seller type, or shipping availability.
-2. Use `/vehicles/{slugVin}` to retrieve full lot details.
-3. Use `/vehicles/{slugVin}/history` to answer VIN auction history questions.
-4. Use `/vehicles/{slugVin}/related` to recommend similar auction lots.
-5. Use `/vehicles/{slugVin}/shipping` or `/shipping/auction-to-port` to estimate delivery prices.
-6. Use `/vehicles/filters` to generate user-facing filter forms.
-7. Use `/locations` to answer questions about Copart and IAAI auction locations.
-
-## Authentication
-
-Agents must send the `X-API-Key` header.
-
-```http
-X-API-Key: YOUR_API_KEY
-```
-
-## Example AI tool description
-
-Apibara Copart & IAAI Vehicle Auction API provides structured JSON data for vehicle auction listings, VIN and lot details, auction photos, prices, auction status, sale history, related vehicles, filters, locations, and auction-to-port shipping prices.
+Auction history is not complete ownership or accident history. Missing/null fields are expected. MCP is read-only.

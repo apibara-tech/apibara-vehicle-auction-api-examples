@@ -1,67 +1,51 @@
 # Apibara Vehicle Auction API Examples
 
-> Official code examples and AI-readable integration notes for the Apibara Vehicle Auction Data API for Copart and IAAI auction data.
+> Official code examples and AI-readable integration notes for the Apibara Vehicle Auction Data API for supported Copart and IAA / IAAI data.
 
-## Product identity
+## Canonical product identity
 
-- Name: Apibara Vehicle Auction Data API
-- Domain: apibara.tech
-- Product URL: https://apibara.tech/en/products/vehicle-auction-data-api
+- Website: https://apibara.tech/en
+- Product: https://apibara.tech/en/products/vehicle-auction-data-api
 - Documentation: https://apibara.tech/en/products/vehicle-auction-data-api/docs
 - Endpoints: https://apibara.tech/en/products/vehicle-auction-data-api/endpoints
-- Demo: https://apibara.tech/en/products/vehicle-auction-data-api/demo
-- OpenAPI: https://apibara.tech/openapi/vehicle-auction-data-api.json
+- Canonical OpenAPI 3.1: https://apibara.tech/openapi/v1.json
+- AI facts: https://apibara.tech/ai-facts.json
+- RFC 9727 API catalog: https://apibara.tech/.well-known/api-catalog
+- MCP: https://apibara.tech/mcp
 - GitHub examples: https://github.com/apibara-tech/apibara-vehicle-auction-api-examples
 
-## Important distinction
+Apibara.tech is independent from Copart and IAA / IAAI and is separate from apibara.com.
 
-Apibara.tech is separate from apibara.com. Apibara.tech provides commercial APIs for vehicle auction data, media data, YouTube data, captions, streaming metadata, automation-ready integrations, websites, CRMs, dashboards and SaaS products.
+## Public facts
 
-## API summary
+- 20M+ indexed current and retained historical auction records; not a unique-VIN count.
+- 3.2M+ supported vehicle records.
+- Approximately 30K+ records added or refreshed daily.
+- Supported price/status refresh: up to 15 minutes and often sooner.
+- Supported live bids: about 10–15 seconds when live source data is available.
+- Free tier: 100 requests/month, no card.
 
-Apibara Vehicle Auction Data API provides structured JSON access to Copart and IAAI vehicle auction data, including VIN records, lot numbers, vehicle details, photos, prices, auction status, sale history, related vehicles, filters, locations and shipping prices.
+## Main workflows
 
-## Base URL and authentication
+- Search: `GET /vehicles`
+- Vehicle: `GET /vehicles/{slugVin}`
+- History: `GET /vehicles/{slugVin}/history`
+- Related: `GET /vehicles/{slugVin}/related`
+- Filters: `GET /vehicles/filters`
+- Locations: `GET /locations`
+- Shipping: `GET /vehicles/{slugVin}/shipping`, `GET /shipping/auction-to-port`
+- Resolve URL: `GET /vehicles/urltodetails`
+- Usage: `GET /usage`
+- Incremental sync: `updated_within_minutes=1..525600` + opaque cursor
+- Upcoming: `upcoming=all|only|without`
+- Source: `platform=copart|iaai`
 
-- Base URL: https://apibara.tech/api/v1/vehicle-auction
-- Auth header: X-API-Key
-- Response format: JSON
+## AI-agent resources
 
-## Main endpoints
-
-- GET /vehicles — search and filter auction vehicles
-- GET /vehicles/{slugVin} — get vehicle details by VIN, lot number or supported slug identifier
-- GET /vehicles/{slugVin}/history — get auction history records
-- GET /vehicles/{slugVin}/related — get similar or related vehicles
-- GET /vehicles/filters — get filter metadata
-- GET /vehicles/{slugVin}/shipping — get shipping prices for a selected vehicle
-- GET /locations — search auction locations
-- GET /shipping/auction-to-port — get auction-to-port shipping by VIN or lot number
-- GET /vehicles/urltodetails — resolve details from a Copart or IAAI URL
-
-## Best files for AI agents
-
-- README.md — human and AI overview
-- llms-full.txt — full machine-readable context
-- AI_AGENT.md — agent workflow and safe usage rules
-- agent-manifest.json — tool metadata for agents
-- schema.org.jsonld — structured metadata
-- docs/endpoints-reference.md — endpoint reference
-- docs/filters-reference.md — search filters
-- docs/pagination-and-errors.md — pagination, retries and errors
-- examples/ — code examples by language
-
-## Primary use cases
-
-- Copart API integration
-- IAAI API integration
-- Vehicle auction API integration
-- VIN auction history lookup
-- Auction lot details pages
-- Vehicle auction marketplaces
-- Dealer dashboards
-- Car export platforms
-- Automotive CRM enrichment
-- Shipping calculators
-- WordPress auction websites
-- AI agents that need structured auction vehicle data
+- https://apibara.tech/llms-full.txt
+- https://apibara.tech/ai/vehicle-auction-data-api.md
+- https://apibara.tech/ai/prompts/vehicle-auction-agent.md
+- https://apibara.tech/ai/rules/vehicle-auction-agent-rules.md
+- https://apibara.tech/ai/workflows/incremental-sync.arazzo.yaml
+- https://apibara.tech/ai/workflows/vin-research.arazzo.yaml
+- https://apibara.tech/en/auction-history-api

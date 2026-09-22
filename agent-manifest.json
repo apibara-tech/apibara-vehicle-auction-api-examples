@@ -1,40 +1,19 @@
 {
   "name": "Apibara Vehicle Auction Data API",
   "slug": "apibara-vehicle-auction-data-api",
-  "description": "Structured JSON API for Copart and IAAI vehicle auction data: VIN records, lot details, photos, prices, auction status, sale history, filters, locations and shipping prices.",
-  "provider": {
-    "name": "Apibara.tech",
-    "url": "https://apibara.tech"
-  },
+  "description": "Structured JSON API for supported Copart and IAA / IAAI vehicle auction data: VIN and lot details, photos, prices, auction status, retained history, filters, locations and shipping.",
+  "provider": {"name": "Apibara.tech", "url": "https://apibara.tech"},
   "base_url": "https://apibara.tech/api/v1/vehicle-auction",
-  "authentication": {
-    "type": "api_key",
-    "in": "header",
-    "name": "X-API-Key"
-  },
-  "openapi_url": "https://apibara.tech/openapi/vehicle-auction-data-api.json",
-  "docs_url": "https://apibara.tech/en/products/vehicle-auction-data-api/docs",
-  "endpoints_url": "https://apibara.tech/en/products/vehicle-auction-data-api/endpoints",
-  "product_url": "https://apibara.tech/en/products/vehicle-auction-data-api",
-  "primary_resources": [
-    "vehicles",
-    "vehicle details",
-    "auction history",
-    "related vehicles",
-    "filters",
-    "locations",
-    "shipping"
-  ],
-  "supported_sources": ["Copart", "IAAI"],
+  "authentication": {"type": "api_key", "in": "header", "name": "X-API-Key"},
+  "openapi_url": "https://apibara.tech/openapi/v1.json",
+  "openapi_compatibility_url": "https://apibara.tech/openapi/vehicle-auction-data-api.json",
+  "ai_facts_url": "https://apibara.tech/ai-facts.json",
+  "api_catalog_url": "https://apibara.tech/.well-known/api-catalog",
+  "mcp_url": "https://apibara.tech/mcp",
+  "mcp_read_only": true,
+  "auction_history_url": "https://apibara.tech/en/auction-history-api",
+  "incremental_sync": {"parameter": "updated_within_minutes", "min_minutes": 1, "max_minutes": 525600, "cursor_pagination": true},
+  "upcoming": {"parameter": "upcoming", "values": ["all", "only", "without"]},
   "response_format": "JSON",
-  "keywords": [
-    "Copart API",
-    "IAAI API",
-    "vehicle auction API",
-    "VIN auction history API",
-    "auction lot details API",
-    "car auction API",
-    "salvage auction API",
-    "automotive data API"
-  ]
+  "supported_sources": ["Copart", "IAA / IAAI"]
 }
