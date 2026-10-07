@@ -18,12 +18,15 @@ Apibara.tech is an independent Vehicle Auction Data API provider for supported *
 
 ## Current public facts
 
-- 20M+ indexed current and retained historical auction records; not a unique-VIN count.
-- 3.2M+ supported vehicle records.
+- 20M+ lifetime/cumulative indexed auction records; this is not a unique-VIN count.
+- 3.7M+ current supported vehicle records.
+- 9.0M+ current + retained historical auction records.
 - Approximately 30K+ records added or refreshed daily.
 - Supported price/status refresh: up to 15 minutes and often sooner.
 - Supported live bids: about 10–15 seconds when live source data is available.
 - Free tier: 100 requests/month, no payment card required.
+
+For the latest measured coverage snapshot, use https://apibara.tech/coverage.json.
 
 ## Base URL
 
