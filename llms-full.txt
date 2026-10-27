@@ -20,8 +20,10 @@ Apibara.tech provides a normalized JSON API for supported Copart and IAA / IAAI 
 
 ## Public facts
 
-- 20M+ indexed current and retained historical auction records. This is a record count, not a unique-VIN or unique-vehicle count.
-- 3.2M+ supported vehicle records represented in the dataset.
+- **20M+ lifetime/cumulative indexed auction records** across the lifetime of Apibara.tech. This is NOT the current retained dataset and is not a count of unique VINs or vehicles.
+- **4,061,492 current supported vehicle/lot records (4.0M+)** in the production retained-data snapshot.
+- **5,894,013 retained historical auction records**, bringing the current + historical retained total to **9,955,505 records (9.9M+)**.
+- **Measured at:** 2026-10-27 11:30:02 UTC. These figures are a dated snapshot and will change as inventory refreshes. For current counts and source breakdown, use [live Coverage](https://apibara.tech/coverage.json) or [AI facts](https://apibara.tech/ai-facts.json).
 - Approximately 30K+ auction records added or refreshed daily.
 - Supported price and auction-status changes can refresh within up to 15 minutes and often sooner.
 - Supported live-bid data can refresh in about 10–15 seconds when live source data is available.
